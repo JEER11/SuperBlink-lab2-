@@ -4,13 +4,13 @@
 ![PlatformIO](https://img.shields.io/badge/PlatformIO-Compatible-orange)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-## 🔗 Repository
+## Repository
 **GitHub**: [https://github.com/JEER11/SuperBlink-lab2-.git](https://github.com/JEER11/SuperBlink-lab2-.git)
 
-## 📋 Overview
+## Overview
 This project implements LED control functionality for the HiFive1 RevB board using RISC-V assembly and C programming. The program cycles through RGB LEDs creating a "super blink" pattern.
 
-## 🏗️ Project Structure
+## Project Structure
 ```
 Lab2/
 ├── platformio.ini          # PlatformIO configuration
@@ -27,28 +27,28 @@ Lab2/
 └── test/
 ```
 
-## ⚡ Functionality
+## Functionality
 The program implements the following features:
 
-### 🔧 GPIO Setup (`setupGPIO()`)
+### GPIO Setup (`setupGPIO()`)
 - Configures RGB LED pins as outputs
 - Initializes all LEDs to OFF state
 
-### 💡 LED Control (`setLED(color, state)`)
+### LED Control (`setLED(color, state)`)
 - Controls individual LEDs (Red, Blue, Green)
 - **Parameters**: color (LED mask), state (ON/OFF)
 - **Returns**: 0 on success, -1 on error
 
-### ⏱️ Delay Function (`delay(milliseconds)`)
+### Delay Function (`delay(milliseconds)`)
 - Provides timing delays using the MTIME register
 - **Parameter**: delay time in milliseconds
 
-### 🌈 Main Program
+### Main Program
 - Cycles through **Green → Blue → Red** LEDs
 - Each LED stays on for **200ms**, then off for **200ms**
 - Continues indefinitely until an error occurs
 
-## 🔌 Hardware Definitions
+## Hardware Definitions
 | Component | GPIO Pin | Hex Value |
 |-----------|----------|-----------|
 | **Red LED** | 22 | `0x400000` |
@@ -60,7 +60,7 @@ The program implements the following features:
 | **GPIO Base** | `0x10012000` |
 | **MTIME** | `0x0200BFF8` |
 
-## 🚀 Building the Project
+## Building the Project
 
 ### Using PlatformIO (Recommended)
 ```bash
@@ -80,22 +80,19 @@ make
 make clean
 ```
 
-## 📦 Requirements
+## Requirements
 - **Hardware**: HiFive1 RevB development board
 - **Software**: PlatformIO or RISC-V GNU toolchain
 - **SDK**: Freedom E SDK (included with PlatformIO sifive platform)
 
-## 🔧 Implementation Notes
+## Implementation Notes
 - Two implementations provided: **C** (`gpio.c`) and **Assembly** (`gpio.S`)
 - C implementation is used by default
 - Memory-mapped I/O for GPIO control
 - MTIME register for precise timing delays
 
-## 📄 License
+## License
 This project is open source and available under the [MIT License](LICENSE).
-
-## 🤝 Contributing
-Feel free to submit issues and enhancement requests!
 
 ---
 **Developed for RISC-V embedded systems programming**
